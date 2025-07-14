@@ -1,9 +1,9 @@
 import { Injectable, UnauthorizedException } from '@nestjs/common';
-import { UsersService } from '../users/users.service';
+import { UsersService } from '../user/users.service';
 import { JwtService } from '@nestjs/jwt';
 import { ConfigService } from '@nestjs/config';
-import { UserRole } from '../users/dto/user-role-enum';
-import { User } from '../users/schemas/users.schema';
+import { UserRole } from '../user/dto/user-role-enum';
+import { User } from '../user/schemas/users.schema';
 import { EmailService } from './email.service';
 
 interface TokenPair {

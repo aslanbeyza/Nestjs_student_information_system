@@ -12,12 +12,18 @@ import {
 import { Teacher } from './schemas/teachers.schema';
 import { TeachersService } from './teachers.service';
 import { CreateTeachersDto } from './dto/create-teachers.dto';
-import { UserRole } from '../users/dto/user-role-enum';
-import { Roles } from '../users/dto/roles.decorator';
-import { RolesGuard } from '../users/guards/roles.guard';
+import { UserRole } from '../user/dto/user-role-enum';
+import { Roles } from '../user/dto/roles.decorator';
+import { RolesGuard } from '../user/guards/roles.guard';
 import { Public } from '../auth/public.decorator';
+import {
+  ApiTags,
+  ApiOperation,
+  ApiResponse,
+} from '@nestjs/swagger';
 
-@Controller('teachers') //http://localhost:3000/teachers olcak url yani
+@ApiTags('teachers')
+@Controller('teachers')
 export class TeachersController {
   constructor(private readonly teachersService: TeachersService) {}
 

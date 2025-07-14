@@ -4,9 +4,15 @@ import { AppService } from './app.service';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 import configuration from './config/configuration';
-import { UsersModule } from './users/users.module';
+import { UsersModule } from './user/users.module';
 import { AuthModule } from './auth/auth.module';
-import { TeachersModule } from './teachers/teachers.module';
+import { TeachersModule } from './teacher/teachers.module';
+import { StudentsModule } from './student/students.module';
+import { CoursesModule } from './course/courses.module';
+import { StudentCourseModule } from './studentCourse/StudentCourse.module';
+import { GradeModule } from './Grade/grade.module';
+import { AttendanceModule } from './Attendance/attendance.module';
+import { ClassModule } from './class/class.module';
 import { APP_GUARD } from '@nestjs/core';
 import { AuthGuard } from './auth/auth.guard';
 import { ThrottlerModule, ThrottlerGuard } from '@nestjs/throttler';
@@ -38,6 +44,12 @@ import { ThrottlerModule, ThrottlerGuard } from '@nestjs/throttler';
     UsersModule,
     AuthModule,
     TeachersModule,
+    StudentsModule,
+    CoursesModule,
+    StudentCourseModule,
+    GradeModule,
+    AttendanceModule,
+    ClassModule,
   ],
   controllers: [AppController],
   providers: [
