@@ -2,7 +2,7 @@
 
 Bu proje NestJS Swagger entegrasyonu ile API dokümantasyonu sağlar.
 
-## 🚀 Swagger UI'ya Erişim
+## Swagger UI'ya Erişim
 
 Uygulama çalıştığında aşağıdaki URL'den Swagger dokümantasyonuna erişebilirsiniz:
 
@@ -12,7 +12,7 @@ http://localhost:3000/api/docs
 
 ## 📋 API Test Sırası (Doğru Test Akışı)
 
-### ⚠️ ÖNEMLİ NOTLAR
+###  ÖNEMLİ NOTLAR
 - **401 Unauthorized** hatası alırsanız: Token süresi dolmuş, yeniden login yapın
 - **403 Forbidden** hatası alırsanız: Bu endpoint için yetkiniz yok, farklı role ile login deneyin
 - **Bearer Token** formatı: `Bearer your_access_token_here`
@@ -20,13 +20,13 @@ http://localhost:3000/api/docs
 
 ---
 
-## 🔥 ADIM ADIM TEST REHBERİ
+## ADIM ADIM TEST REHBERİ
 
 ### 1️⃣ İLK KULLANICI OLUŞTURMA (Admin)
 
 **Endpoint:** `POST /users`  
 **Açıklama:** İlk kullanıcı otomatik olarak Admin rolü alır  
-**Authentication:** ❌ Public (Bearer Token gerektirmez)
+**Authentication:**  Public (Bearer Token gerektirmez)
 
 **Request Body:**
 ```json
@@ -62,7 +62,7 @@ http://localhost:3000/api/docs
 
 **Endpoint:** `POST /auth/login`  
 **Açıklama:** Giriş yapıp JWT token alın  
-**Authentication:** ❌ Public
+**Authentication:**  Public
 
 **Request Body:**
 ```json
@@ -98,7 +98,7 @@ http://localhost:3000/api/docs
 
 **Endpoint:** `GET /auth/profile`  
 **Açıklama:** Mevcut kullanıcı bilgilerini gösterir  
-**Authentication:** ✅ Bearer Token gerekli
+**Authentication:** Bearer Token gerekli
 
 **Request:** Body yok, sadece Authorization header
 **Beklenen Response:**
@@ -119,7 +119,7 @@ http://localhost:3000/api/docs
 ### 5️⃣ TEACHER KULLANICISI OLUŞTURMA
 
 **Endpoint:** `POST /users`  
-**Authentication:** ❌ Public
+**Authentication:**  Public
 
 **Request Body:**
 ```json
@@ -138,7 +138,7 @@ http://localhost:3000/api/docs
 ### 6️⃣ STUDENT KULLANICISI OLUŞTURMA
 
 **Endpoint:** `POST /users`  
-**Authentication:** ❌ Public
+**Authentication:**  Public
 
 **Request Body:**
 ```json
@@ -157,7 +157,7 @@ http://localhost:3000/api/docs
 ### 7️⃣ TÜM KULLANICILARI LISTELEME
 
 **Endpoint:** `GET /users`  
-**Authentication:** ❌ Public
+**Authentication:** Public
 
 **Response:** Tüm kullanıcıların listesi (user ID'lerini not alın!)
 
@@ -166,7 +166,7 @@ http://localhost:3000/api/docs
 ### 8️⃣ SINIF OLUŞTURMA
 
 **Endpoint:** `POST /class`  
-**Authentication:** ✅ Bearer Token gerekli (Admin/Teacher)
+**Authentication:**  Bearer Token gerekli (Admin/Teacher)
 
 **Request Body:**
 ```json
@@ -185,7 +185,7 @@ http://localhost:3000/api/docs
 ### 9️⃣ TEACHER PROFIL OLUŞTURMA
 
 **Endpoint:** `POST /teachers`  
-**Authentication:** ✅ Bearer Token gerekli (Admin)
+**Authentication:**  Bearer Token gerekli (Admin)
 
 **Request Body:**
 ```json
@@ -211,7 +211,7 @@ http://localhost:3000/api/docs
 ### 🔟 STUDENT PROFIL OLUŞTURMA
 
 **Endpoint:** `POST /students`  
-**Authentication:** ✅ Bearer Token gerekli (Admin)
+**Authentication:**  Bearer Token gerekli (Admin)
 
 **Request Body:**
 ```json
@@ -231,7 +231,7 @@ http://localhost:3000/api/docs
 ### 1️⃣1️⃣ DERS OLUŞTURMA
 
 **Endpoint:** `POST /courses`  
-**Authentication:** ✅ Bearer Token gerekli (Admin/Teacher)
+**Authentication:**  Bearer Token gerekli (Admin/Teacher)
 
 **Request Body:**
 ```json
@@ -256,7 +256,7 @@ http://localhost:3000/api/docs
 ### 1️⃣2️⃣ ÖĞRENCİYİ DERSE KAYDETME
 
 **Endpoint:** `POST /student-courses`  
-**Authentication:** ✅ Bearer Token gerekli (Admin/Teacher)
+**Authentication:**  Bearer Token gerekli (Admin/Teacher)
 
 **Request Body:**
 ```json
@@ -277,7 +277,7 @@ http://localhost:3000/api/docs
 ### 1️⃣3️⃣ NOT GİRME
 
 **Endpoint:** `POST /grades`  
-**Authentication:** ✅ Bearer Token gerekli (Admin/Teacher)
+**Authentication:**  Bearer Token gerekli (Admin/Teacher)
 
 **Request Body:**
 ```json
@@ -298,7 +298,7 @@ http://localhost:3000/api/docs
 ### 1️⃣4️⃣ DEVAMSIZLIK KAYDI
 
 **Endpoint:** `POST /attendances`  
-**Authentication:** ✅ Bearer Token gerekli (Admin/Teacher)
+**Authentication:**  Bearer Token gerekli (Admin/Teacher)
 
 **Request Body:**
 ```json
@@ -321,14 +321,14 @@ http://localhost:3000/api/docs
 
 | Endpoint | Authentication | Açıklama |
 |----------|---------------|----------|
-| `GET /users` | ❌ Public | Tüm kullanıcılar |
-| `GET /teachers` | ❌ Public | Tüm öğretmenler |
-| `GET /students` | ✅ Token | Tüm öğrenciler |
-| `GET /class` | ✅ Token | Tüm sınıflar |
-| `GET /courses` | ✅ Token | Tüm dersler |
-| `GET /grades` | ✅ Token | Tüm notlar |
-| `GET /attendances` | ✅ Token | Tüm devamsızlıklar |
-| `GET /student-courses` | ✅ Token | Öğrenci-Ders ilişkileri |
+| `GET /users` |  Public | Tüm kullanıcılar |
+| `GET /teachers` |  Public | Tüm öğretmenler |
+| `GET /students` | Token | Tüm öğrenciler |
+| `GET /class` |  Token | Tüm sınıflar |
+| `GET /courses` | Token | Tüm dersler |
+| `GET /grades` |  Token | Tüm notlar |
+| `GET /attendances` |  Token | Tüm devamsızlıklar |
+| `GET /student-courses` |  Token | Öğrenci-Ders ilişkileri |
 
 ---
 
@@ -337,7 +337,7 @@ http://localhost:3000/api/docs
 Access token süresi dolduğunda:
 
 **Endpoint:** `POST /auth/refresh`  
-**Authentication:** ❌ Public
+**Authentication:**  Public
 
 **Request Body:**
 ```json
